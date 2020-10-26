@@ -4,7 +4,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>>
+<body <?php body_class( 'lang-' . pll_current_language() ); ?>>
   <header class="site-header">
     <?php 
     $phone_number   = get_field('phone_number', 'option');
@@ -46,6 +46,18 @@
                 <li><a href="tel:<?php echo $phone_number; ?>"><i class="fa fa-phone"></i> <?php echo $phone_number; ?></a></li>
                 <li><a href="mailto:<?php echo $email_address; ?>"><i class="fa fa-envelope"></i> <?php echo $email_address; ?></a></li>
               </ul>
+              <!-- Header language switcher -->
+              <div class="language-switcher">
+                <?php 
+                wp_nav_menu([
+                  'theme_location'      =>  'language-switch',
+                  'container'           =>  'false',
+                  'menu_class'          =>  'language-switcher',
+                  'fallback_cb'         =>  false,
+                  'depth'               =>  1
+                ])
+                ?>
+              </div>
             </div>
           </div>
         </div>
@@ -65,7 +77,7 @@
           <div class="col-80">
             <div class="menu-wrapper">
               <button class="menu-trigger"><i class="fa fa-bars"></i></button>
-              <nav class="primary-menu">
+              <nav class="primary-menu slide">
                 <?php 
                 wp_nav_menu([
                   'theme_location'      =>  'primary-menu',

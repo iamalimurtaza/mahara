@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php get_header(); 
+/**
+ * Template Name: HomePage
+*/
+?>
 <section class="main-slider">
   <div class="swiper-container home-slider">
     <div class="swiper-wrapper">
@@ -30,9 +34,12 @@
 </section>
 
 <!-- Courses -->
+<?php 
+$courses_title = get_field('courses_title');
+?>
 <section class="courses">
   <div class="container">
-    <h2 class="section-title text-center"><span>Latest Courses</span></h2>
+    <h2 class="section-title text-center"><span><?php echo $courses_title; ?></span></h2>
     <div class="courses-grid">
       <div class="d-flex">
         <?php 
@@ -62,7 +69,7 @@
                       ?>
                     </div>
                     <p class="author-name">
-                      <a href="<?php echo get_author_posts_url( $author_id ) ?>"><?php the_author(); ?></a>
+                      <?php the_author(); ?>
                     </p>
                   </div>
                 </div>
@@ -102,6 +109,7 @@
 
 <!-- Home About -->
 <?php 
+$about_us_section_title = get_field('about_us_section_title');
 $about_us_image   = get_field('about_us_image');
 $about_us_title   = get_field('about_us_title');
 $about_us_text    = get_field('about_us_text');
@@ -109,7 +117,7 @@ $about_us_button  = get_field('about_us_button');
 ?>
 <section class="home-about">
   <div class="container">
-    <h2 class="section-title text-center"><span>About Us</span></h2>
+    <h2 class="section-title text-center"><span><?php echo $about_us_section_title; ?></span></h2>
     <div class="about-grid">
       <div class="d-flex">
         <div class="col-1-2">

@@ -4,7 +4,7 @@ if( function_exists('acf_add_options_page') ) {
 		'page_title' 	=> 'Mahara',
 		'menu_title'	=> 'Mahara Options',
 		'menu_slug' 	=> 'mahara-options',
-		'capability'	=> 'edit_posts',
+		'capability'	=> 'edit_pages',
     'redirect'		=> false,
     'icon_url'    => 'dashicons-marker'
 	));

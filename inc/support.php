@@ -10,6 +10,7 @@ function mahara_support(){
   // Menus
   register_nav_menus([
     'primary-menu'    =>  __('Primary Menu', 'mahara'),
-    'footer-menu'     =>  __('Footer Menu', 'mahara')
+    'footer-menu'     =>  __('Footer Menu', 'mahara'),
+    'language-switch' =>  __('Language Switcher', 'mahara')
   ]);
 }

@@ -4,6 +4,7 @@
 include get_template_directory() . '/inc/enqueue.php';
 include get_template_directory() . '/inc/acf.php';
 include get_template_directory() . '/inc/support.php';
+include get_template_directory() . '/admin/admin-enqueue.php';
 
 // Hooks
 add_action( 'wp_enqueue_scripts', 'mahara_styles' );

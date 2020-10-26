@@ -1,1 +1,1 @@
-Hello
+<?php // Silence is golder
